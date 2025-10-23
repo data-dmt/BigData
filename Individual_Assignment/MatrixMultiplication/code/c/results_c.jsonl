@@ -1,0 +1,5 @@
+{"lang":"C","n":64,"runs":5,"order":"ikj","mean_sec":0.000041,"stdev_sec":0.000001}
+{"lang":"C","n":128,"runs":5,"order":"ikj","mean_sec":0.000302,"stdev_sec":0.000001}
+{"lang":"C","n":256,"runs":5,"order":"ikj","mean_sec":0.003792,"stdev_sec":0.000164}
+{"lang":"C","n":512,"runs":5,"order":"ikj","mean_sec":0.025690,"stdev_sec":0.001831}
+{"lang":"C","n":1024,"runs":5,"order":"ikj","mean_sec":0.268099,"stdev_sec":0.017459}
