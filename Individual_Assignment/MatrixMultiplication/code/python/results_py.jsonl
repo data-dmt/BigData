@@ -1,0 +1,5 @@
+{"lang": "Python", "n": 64, "runs": 7, "order": "ikj", "mean_sec": 0.016338581857261097, "stdev_sec": 0.0005164755542206122}
+{"lang": "Python", "n": 128, "runs": 7, "order": "ikj", "mean_sec": 0.12632148828561185, "stdev_sec": 0.00365540658250553}
+{"lang": "Python", "n": 256, "runs": 7, "order": "ikj", "mean_sec": 1.0137324697142114, "stdev_sec": 0.041611368262143025}
+{"lang": "Python", "n": 512, "runs": 7, "order": "ikj", "mean_sec": 8.28567032385685, "stdev_sec": 0.05664423090343983}
+{"lang": "Python", "n": 1024, "runs": 7, "order": "ikj", "mean_sec": 69.24628408957167, "stdev_sec": 0.5170981083248803}
