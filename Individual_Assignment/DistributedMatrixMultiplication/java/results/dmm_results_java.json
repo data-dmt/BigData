@@ -1,0 +1,173 @@
+{
+  "created_at" : "2025-12-19T18:27:53.133761",
+  "config" : {
+    "modes" : [ "basic", "parallel", "spark-rows", "spark-blocks" ],
+    "cases" : [ {
+      "m" : 512,
+      "n" : 512,
+      "p" : 512
+    }, {
+      "m" : 1024,
+      "n" : 1024,
+      "p" : 1024
+    } ],
+    "dtype" : "float32",
+    "parallelThreads" : 4,
+    "parallelChunkRows" : 128,
+    "sparkMaster" : "local[*]",
+    "sparkAppName" : "DMM-Java",
+    "sparkLocalDir" : "/Users/usuario1/IdeaProjects/dmm/./spark_tmp",
+    "sparkPartitions" : 8,
+    "blockSize" : 128,
+    "minFreeDiskBytes" : 6000000000,
+    "cleanupSparkLocalDir" : true,
+    "outputDir" : "/Users/usuario1/IdeaProjects/dmm/./results"
+  },
+  "results" : [ {
+    "mode" : "basic",
+    "m" : 512,
+    "n" : 512,
+    "p" : 512,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.341734208,
+    "checksum" : 785.9338457556014,
+    "notes" : "OK",
+    "extra" : { }
+  }, {
+    "mode" : "parallel",
+    "m" : 512,
+    "n" : 512,
+    "p" : 512,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.113155164,
+    "checksum" : 785.9338457557424,
+    "notes" : "OK",
+    "extra" : {
+      "chunkRows" : 128,
+      "threads" : 4
+    }
+  }, {
+    "mode" : "spark-rows",
+    "m" : 512,
+    "n" : 512,
+    "p" : 512,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.408675855,
+    "checksum" : 7616.42437545209,
+    "notes" : "OK",
+    "extra" : {
+      "partitions" : 8,
+      "resultSizeBytes" : 8832,
+      "memoryBytesSpilled" : 0,
+      "executorRunTimeMs" : 1244,
+      "jvmGCTimeMs" : 0,
+      "rowsPerPart" : 64,
+      "shuffleReadBytes" : 0,
+      "broadcastB_bytes" : 1048576,
+      "shuffleWriteBytes" : 0,
+      "diskBytesSpilled" : 0,
+      "tasks" : 8
+    }
+  }, {
+    "mode" : "spark-blocks",
+    "m" : 512,
+    "n" : 512,
+    "p" : 512,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.517174342,
+    "checksum" : -17351.337194064632,
+    "notes" : "OK",
+    "extra" : {
+      "partitions" : 8,
+      "memoryBytesSpilled" : 0,
+      "executorRunTimeMs" : 2343,
+      "jvmGCTimeMs" : 40,
+      "shuffleReadBytes" : 6308688,
+      "shuffleWriteBytes" : 6308688,
+      "diskBytesSpilled" : 0,
+      "blockSize" : 128,
+      "resultSizeBytes" : 49699,
+      "blocksI" : 4,
+      "blocksJ" : 4,
+      "blocksK" : 4,
+      "tasks" : 32
+    }
+  }, {
+    "mode" : "basic",
+    "m" : 1024,
+    "n" : 1024,
+    "p" : 1024,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 1.90983714,
+    "checksum" : -8927.844920884609,
+    "notes" : "OK",
+    "extra" : { }
+  }, {
+    "mode" : "parallel",
+    "m" : 1024,
+    "n" : 1024,
+    "p" : 1024,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.532222108,
+    "checksum" : -8927.84492088569,
+    "notes" : "OK",
+    "extra" : {
+      "chunkRows" : 128,
+      "threads" : 4
+    }
+  }, {
+    "mode" : "spark-rows",
+    "m" : 1024,
+    "n" : 1024,
+    "p" : 1024,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.551370951,
+    "checksum" : 59529.576101431594,
+    "notes" : "OK",
+    "extra" : {
+      "partitions" : 8,
+      "resultSizeBytes" : 8789,
+      "memoryBytesSpilled" : 0,
+      "executorRunTimeMs" : 3908,
+      "jvmGCTimeMs" : 24,
+      "rowsPerPart" : 128,
+      "shuffleReadBytes" : 0,
+      "broadcastB_bytes" : 4194304,
+      "shuffleWriteBytes" : 0,
+      "diskBytesSpilled" : 0,
+      "tasks" : 8
+    }
+  }, {
+    "mode" : "spark-blocks",
+    "m" : 1024,
+    "n" : 1024,
+    "p" : 1024,
+    "dtype" : "float32",
+    "ok" : true,
+    "elapsedSec" : 0.547701706,
+    "checksum" : -1710.3522428497672,
+    "notes" : "OK",
+    "extra" : {
+      "partitions" : 8,
+      "memoryBytesSpilled" : 0,
+      "executorRunTimeMs" : 3721,
+      "jvmGCTimeMs" : 20,
+      "shuffleReadBytes" : 42016104,
+      "shuffleWriteBytes" : 42016104,
+      "diskBytesSpilled" : 0,
+      "blockSize" : 128,
+      "resultSizeBytes" : 50148,
+      "blocksI" : 8,
+      "blocksJ" : 8,
+      "blocksK" : 8,
+      "tasks" : 32
+    }
+  } ]
+}
