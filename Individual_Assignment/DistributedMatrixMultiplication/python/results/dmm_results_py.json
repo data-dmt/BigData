@@ -1,0 +1,209 @@
+{
+  "created_at": "2025-12-19T19:07:07.581671",
+  "config": {
+    "modes": [
+      "basic",
+      "parallel",
+      "spark-rows",
+      "spark-blocks"
+    ],
+    "cases": [
+      {
+        "m": 512,
+        "n": 512,
+        "p": 512
+      },
+      {
+        "m": 1024,
+        "n": 1024,
+        "p": 1024
+      }
+    ],
+    "dtype": "float32",
+    "max_estimated_dense_bytes": 1500000000,
+    "min_free_disk_bytes": 6000000000,
+    "parallel_threads": 4,
+    "parallel_chunk_rows": 128,
+    "spark_master": "local[*]",
+    "spark_app_name": "DMM-Python",
+    "spark_partitions": 8,
+    "spark_local_dir": "./spark_tmp",
+    "block_size": 128,
+    "spark_eventlog_enabled": true,
+    "spark_eventlog_dir": "./spark_eventlog",
+    "output_dir": "./results",
+    "cleanup_spark_local_dir": true
+  },
+  "results": [
+    {
+      "mode": "basic",
+      "m": 512,
+      "n": 512,
+      "p": 512,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 0.009567975997924805,
+      "checksum": -12340.837890625,
+      "notes": "OK",
+      "extra": {}
+    },
+    {
+      "mode": "parallel",
+      "m": 512,
+      "n": 512,
+      "p": 512,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 0.00793600082397461,
+      "checksum": -12340.84326171875,
+      "notes": "OK",
+      "extra": {
+        "threads": 4,
+        "chunkRows": 128
+      }
+    },
+    {
+      "mode": "spark-rows",
+      "m": 512,
+      "n": 512,
+      "p": 512,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 2.0599560737609863,
+      "checksum": 4503.199337005615,
+      "notes": "OK",
+      "extra": {
+        "partitions": 8,
+        "rowsPerPart": 64,
+        "broadcastB_bytes": 1048576,
+        "notes": "Row-based Spark approach: broadcast B, shuffle is typically near zero.",
+        "sparkUiUrl": "http://192.168.1.138:4040",
+        "appId": "local-1766171209596",
+        "stages": 1,
+        "tasks": 8,
+        "shuffleReadBytes": 0,
+        "shuffleWriteBytes": 0,
+        "memoryBytesSpilled": 0,
+        "diskBytesSpilled": 0,
+        "executorRunTimeMs": 11794,
+        "jvmGCTimeMs": 96,
+        "resultSizeBytes": 13180
+      }
+    },
+    {
+      "mode": "spark-blocks",
+      "m": 512,
+      "n": 512,
+      "p": 512,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 3.299107074737549,
+      "checksum": -1483.876220703125,
+      "notes": "OK",
+      "extra": {
+        "partitions": 8,
+        "blockSize": 128,
+        "blocksI": 4,
+        "blocksK": 4,
+        "blocksJ": 4,
+        "notes": "Block-based Spark approach: shuffle expected (cogroup + reduceByKey).",
+        "sparkUiUrl": "http://192.168.1.138:4040",
+        "appId": "local-1766171216234",
+        "stages": 3,
+        "tasks": 32,
+        "shuffleReadBytes": 6310336,
+        "shuffleWriteBytes": 6310336,
+        "memoryBytesSpilled": 0,
+        "diskBytesSpilled": 0,
+        "executorRunTimeMs": 31977,
+        "jvmGCTimeMs": 210,
+        "resultSizeBytes": 67532
+      }
+    },
+    {
+      "mode": "basic",
+      "m": 1024,
+      "n": 1024,
+      "p": 1024,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 0.03960394859313965,
+      "checksum": -20550.291015625,
+      "notes": "OK",
+      "extra": {}
+    },
+    {
+      "mode": "parallel",
+      "m": 1024,
+      "n": 1024,
+      "p": 1024,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 0.032035112380981445,
+      "checksum": -20550.289306640625,
+      "notes": "OK",
+      "extra": {
+        "threads": 4,
+        "chunkRows": 128
+      }
+    },
+    {
+      "mode": "spark-rows",
+      "m": 1024,
+      "n": 1024,
+      "p": 1024,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 1.5432028770446777,
+      "checksum": 21229.36841583252,
+      "notes": "OK",
+      "extra": {
+        "partitions": 8,
+        "rowsPerPart": 128,
+        "broadcastB_bytes": 4194304,
+        "notes": "Row-based Spark approach: broadcast B, shuffle is typically near zero.",
+        "sparkUiUrl": "http://192.168.1.138:4040",
+        "appId": "local-1766171220685",
+        "stages": 1,
+        "tasks": 8,
+        "shuffleReadBytes": 0,
+        "shuffleWriteBytes": 0,
+        "memoryBytesSpilled": 0,
+        "diskBytesSpilled": 0,
+        "executorRunTimeMs": 11663,
+        "jvmGCTimeMs": 0,
+        "resultSizeBytes": 12664
+      }
+    },
+    {
+      "mode": "spark-blocks",
+      "m": 1024,
+      "n": 1024,
+      "p": 1024,
+      "dtype": "float32",
+      "ok": true,
+      "elapsed_s": 3.225734233856201,
+      "checksum": -14885.234588623047,
+      "notes": "OK",
+      "extra": {
+        "partitions": 8,
+        "blockSize": 128,
+        "blocksI": 8,
+        "blocksK": 8,
+        "blocksJ": 8,
+        "notes": "Block-based Spark approach: shuffle expected (cogroup + reduceByKey).",
+        "sparkUiUrl": "http://192.168.1.138:4040",
+        "appId": "local-1766171223332",
+        "stages": 3,
+        "tasks": 32,
+        "shuffleReadBytes": 42037952,
+        "shuffleWriteBytes": 42037952,
+        "memoryBytesSpilled": 0,
+        "diskBytesSpilled": 0,
+        "executorRunTimeMs": 32026,
+        "jvmGCTimeMs": 516,
+        "resultSizeBytes": 68005
+      }
+    }
+  ]
+}
